@@ -1,0 +1,64 @@
+{
+	"name": "plugin-shiki-transformers",
+	"version": "0.0.3",
+	"description": "Add transformers capabilities to Shiki's highlighter",
+	"keywords": [
+		"shiki",
+		"transformers"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hunghg255/plugin-shiki-transformers.git"
+	},
+	"funding": "https://github.com/sponsors/plugin-shiki-transformers",
+	"author": "Gia Hung <giahung197bg@gmail.com>",
+	"type": "module",
+	"homepage": "https://github.com/hunghg255/plugin-shiki-transformers#readme",
+	"bugs": "https://github.com/hunghg255/plugin-shiki-transformers/issues",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*",
+				"./dist/index.d.ts"
+			]
+		}
+	},
+	"scripts": {
+		"build": "unbuild",
+		"dev": "unbuild --stub",
+		"lint": "eslint --ext .ts src --color",
+		"release": "bumpp && npm publish",
+		"start": "esno src/index.ts",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"shiki": "0.x"
+	},
+	"devDependencies": {
+		"@hunghg255/eslint-config-ts": "^0.0.8",
+		"@types/node": "^18.19.3",
+		"bumpp": "^8.2.1",
+		"eslint": "^8.56.0",
+		"esno": "^0.16.3",
+		"shiki": "^0.14.7",
+		"typescript": "^4.9.5",
+		"unbuild": "^1.2.1",
+		"vitest": "^0.28.5"
+	}
+}

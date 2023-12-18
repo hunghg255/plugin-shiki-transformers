@@ -1,0 +1,7 @@
+node_modules
+public
+vendor
+**/dist
+pnpm-lock.yaml
+test
+tsconfig.json

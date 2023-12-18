@@ -1,0 +1,7 @@
+{
+	"extends": "@hunghg255/eslint-config-ts",
+	"rules": {
+		"no-tabs": "off",
+		"unicorn/no-array-reduce": "off"
+	}
+}
