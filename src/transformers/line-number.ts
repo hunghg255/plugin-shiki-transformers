@@ -12,15 +12,15 @@ export function createTransformerLineNumber(): ITransformer {
 
       code
         .split('\n')
-        .filter((v) => `${v}`.trim())
+        .filter((v) => v !== '\t')
         .map((lineOfCode, idx) => {
           const lineNumber = idx + 1;
           lineOptions.push({
+            lineOfCode,
             line: lineNumber,
             classes: ['line-number'],
           });
         });
-
 
       return {
         code,
