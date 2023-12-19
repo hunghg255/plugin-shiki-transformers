@@ -35,7 +35,8 @@ export async function getHighlighter(options: HighlighterOptions = {}): Promise<
           ...lineOptions,
           ...baseLineOptions,
         ],
-      })
+      });
+
 
       return postTransformer(transformers, highlighted, lang)
     },

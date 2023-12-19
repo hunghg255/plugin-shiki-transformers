@@ -12,7 +12,7 @@ export function defineTransformer(transformer: ITransformer): ITransformer {
  */
 export function transformer(transformers: ITransformer[], code: string, lang: string) {
   return transformers.reduce((options, transformer) => {
-    const { code, lineOptions } = transformer.handler?.({
+    const { code, lineOptions } = transformer?.preTransformer?.({
       code: options.code,
       lang,
     }) ?? options
@@ -34,7 +34,7 @@ export function transformer(transformers: ITransformer[], code: string, lang: st
  * Transforms final code through the given Transformers.
  */
 export function postTransformer(transformers: ITransformer[], code: string, lang: string) {
-  return transformers.reduce((code, transformer) => transformer.postTransformer?.({
+  return transformers.reduce((code, transformer) => transformer?.postTransformer?.({
     code,
     lang,
   }) ?? code, code)

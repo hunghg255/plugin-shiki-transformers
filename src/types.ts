@@ -1,7 +1,6 @@
 import type { HtmlRendererOptions } from 'shiki'
 
 export type TLineOptions = NonNullable<HtmlRendererOptions['lineOptions']>
-
 export interface ITransformerResult {
 	code: string
   lineOptions: TLineOptions
@@ -14,7 +13,7 @@ export interface ITransformerOptions {
 	lang: string
 }
 
-export type TTransformerHandler = (options: ITransformerOptions) => ITransformerResult
+export type TPreTransformer = (options: ITransformerOptions) => ITransformerResult
 export type TPostTransformerHandler = (options: ITransformerOptions) => TPostTransformerResult
 
 export interface IRangeTransformerOptions {
@@ -23,6 +22,6 @@ export interface IRangeTransformerOptions {
 
 export interface ITransformer {
 	name: string
-	handler?: TTransformerHandler
+	preTransformer?: TPreTransformer
 	postTransformer?: TPostTransformerHandler
 }

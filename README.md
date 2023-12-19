@@ -45,7 +45,7 @@ Alternatively, for more flexibility, it is possible to use the `process` and `po
 
 ```ts
 import { getHighlighter } from 'shiki'
-import { process, postProcess } from 'plugin-shiki-transformers'
+import { transformer, postTransfomer } from 'plugin-shiki-transformers'
 
 const theme = 'material-theme-palenight'
 const lang = 'javascript'

@@ -15,7 +15,7 @@ export function createTransformerHighlight(options: ITransformerHighlightOptions
 
   return {
     name: 'plugin-shiki-transformer:highlight',
-    handler: createRangeTransformer({
+    preTransformer: createRangeTransformer({
       highlight: classActiveLine,
       hl: classActiveLine,
     }, options),

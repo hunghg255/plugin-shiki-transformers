@@ -1,6 +1,6 @@
 {
 	"name": "plugin-shiki-transformers",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "Add transformers capabilities to Shiki's highlighter",
 	"keywords": [
 		"shiki",

@@ -1,6 +1,6 @@
-import type { TLineOptions, TTransformerHandler, ITransformerOptions, IRangeTransformerOptions } from '../types'
+import type { TLineOptions, TPreTransformer, ITransformerOptions, IRangeTransformerOptions } from '../types'
 
-export function createRangeTransformer(classMap: Record<string, string | string[]>, options: IRangeTransformerOptions = {}): TTransformerHandler {
+export function createRangeTransformer(classMap: Record<string, string | string[]>, options: IRangeTransformerOptions = {}): TPreTransformer {
   return ({ code }: ITransformerOptions) => {
     // https://regex101.com/r/mUxvfx/1
     const tagRE = options.tagRegExp ?? /(?:\/\/|\/\*{1,2}) *\[!code ([\w+-]+)(?::(\d+))?] *(?:\*{1,2}\/)?/

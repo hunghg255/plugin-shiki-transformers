@@ -27,7 +27,7 @@ export function createTransformerDiff(options: ITransformerDiffOptions = {}): IT
 
   return {
     name: 'plugin-shiki-transformer:diff',
-    handler: createRangeTransformer({
+    preTransformer: createRangeTransformer({
       '++': classLineAdd,
       '--': classLineRemove,
     }, options),

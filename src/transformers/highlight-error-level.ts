@@ -21,7 +21,7 @@ export function createTransformerErrorLevel(options: ITransformerErrorLevelOptio
 
   return {
     name: 'plugin-shiki-transformer:highlight-error',
-    handler: createRangeTransformer(classMap, options),
+    preTransformer: createRangeTransformer(classMap, options),
     postTransformer: ({ code }) => {
       if (!code.includes('highlighted error') && !code.includes('highlighted warning')) {
         return code

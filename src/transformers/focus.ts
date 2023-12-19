@@ -21,7 +21,7 @@ export function createTransformerFocus(options: ITransformerFocusOptions = {}): 
 
   return {
     name: 'plugin-shiki-transformer:focus',
-    handler: createRangeTransformer({
+    preTransformer: createRangeTransformer({
       focus: classActiveLine,
       fc: classActiveLine,
     }, options),
