@@ -12,7 +12,6 @@ export function createTransformerLineNumber(): ITransformer {
 
       code
         .split('\n')
-        .filter((v) => v !== '\t')
         .map((lineOfCode, idx) => {
           const lineNumber = idx + 1;
           lineOptions.push({
@@ -21,6 +20,8 @@ export function createTransformerLineNumber(): ITransformer {
             classes: ['line-number'],
           });
         });
+
+      lineOptions.pop()
 
       return {
         code,
