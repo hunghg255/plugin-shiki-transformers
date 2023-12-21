@@ -1,5 +1,6 @@
 import type { IRangeTransformerOptions, ITransformer } from '../types'
 import { addClass } from '../utils/add-class'
+import { checkClass } from '../utils/check-class';
 import { createRangeTransformer } from '../utils/create-range-transformer'
 
 export interface ITransformerHighlightOptions extends IRangeTransformerOptions {
@@ -14,13 +15,13 @@ export function createTransformerHighlight(options: ITransformerHighlightOptions
   } = options
 
   return {
-    name: 'plugin-shiki-transformer:highlight',
+    name: 'shiki-transformer:highlight',
     preTransformer: createRangeTransformer({
       highlight: classActiveLine,
       hl: classActiveLine,
     }, options),
     postTransformer: ({ code }) => {
-      if (!code.includes(classActiveLine)) {
+      if (!checkClass(code, classActiveLine)) {
         return code
       }
 

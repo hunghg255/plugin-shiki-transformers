@@ -1,5 +1,6 @@
 import type { IRangeTransformerOptions, ITransformer } from '../types'
 import { addClass } from '../utils/add-class'
+import { checkClass } from '../utils/check-class'
 import { createRangeTransformer } from '../utils/create-range-transformer'
 
 export interface ITransformerFocusOptions extends IRangeTransformerOptions {
@@ -20,13 +21,13 @@ export function createTransformerFocus(options: ITransformerFocusOptions = {}): 
   } = options
 
   return {
-    name: 'plugin-shiki-transformer:focus',
+    name: 'shiki-transformer:focus',
     preTransformer: createRangeTransformer({
       focus: classActiveLine,
       fc: classActiveLine,
     }, options),
     postTransformer: ({ code }) => {
-      if (!code.includes(classActiveLine)) {
+      if (!checkClass(code, classActiveLine)) {
         return code
       }
 

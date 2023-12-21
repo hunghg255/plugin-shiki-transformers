@@ -1,5 +1,6 @@
 import type { IRangeTransformerOptions, ITransformer } from '../types'
 import { addClass } from '../utils'
+import { checkClass } from '../utils/check-class'
 import { createRangeTransformer } from '../utils/create-range-transformer'
 
 export interface ITransformerDiffOptions extends IRangeTransformerOptions {
@@ -26,13 +27,13 @@ export function createTransformerDiff(options: ITransformerDiffOptions = {}): IT
 
 
   return {
-    name: 'plugin-shiki-transformer:diff',
+    name: 'shiki-transformer:diff',
     preTransformer: createRangeTransformer({
       '++': classLineAdd,
       '--': classLineRemove,
     }, options),
     postTransformer: ({ code }) => {
-      if (!code.includes(classLineAdd) && !code.includes(classLineRemove)) {
+      if (!checkClass(code, classLineAdd) && !checkClass(code, classLineRemove)) {
         return code
       }
 

@@ -1,35 +1,41 @@
-/* eslint-disable array-callback-return */
-import type { ITransformer } from '../types'
+import type { ITransformer, TLineOptions } from '../types';
 import { addClass } from '../utils';
 
-const classActivePre = 'has-line-number'
+export interface ITransformerLineNumberOptions {
+  classActivePre?: string;
+  classActiveLine?: string;
+}
 
-export function createTransformerLineNumber(): ITransformer {
+export function createTransformerLineNumber(
+  options: ITransformerLineNumberOptions = {},
+): ITransformer {
+  const {
+    classActiveLine = 'line-number',
+    classActivePre = 'has-line-number',
+  } = options;
+
   return {
-    name: 'plugin-shiki-transformer:line-number',
+    name: 'shiki-transformer:line-number',
     preTransformer: ({ code }) => {
-      const lineOptions = [] as any[];
+      const lineOptions = [] as TLineOptions;
 
-      code
-        .split('\n')
-        .map((lineOfCode, idx) => {
-          const lineNumber = idx + 1;
-          lineOptions.push({
-            lineOfCode,
-            line: lineNumber,
-            classes: ['line-number'],
-          });
+      for (const [idx] of code.split('\n').entries()) {
+        const lineNumber = idx + 1;
+        lineOptions.push({
+          line: lineNumber,
+          classes: [classActiveLine],
         });
+      }
 
-      lineOptions.pop()
+      lineOptions.pop();
 
       return {
         code,
-        lineOptions
-      }
+        lineOptions,
+      };
     },
     postTransformer: ({ code }) => {
-      return addClass(code, classActivePre, 'pre')
+      return addClass(code, classActivePre, 'pre');
     },
-  }
+  };
 }

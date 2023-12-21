@@ -1,5 +1,6 @@
 import type { IRangeTransformerOptions, ITransformer } from '../types'
 import { addClass } from '../utils/add-class'
+import { checkClass } from '../utils/check-class'
 import { createRangeTransformer } from '../utils/create-range-transformer'
 
 export interface ITransformerErrorLevelOptions extends IRangeTransformerOptions {
@@ -20,10 +21,10 @@ export function createTransformerErrorLevel(options: ITransformerErrorLevelOptio
   } = options
 
   return {
-    name: 'plugin-shiki-transformer:highlight-error',
+    name: 'shiki-transformer:highlight-error',
     preTransformer: createRangeTransformer(classMap, options),
     postTransformer: ({ code }) => {
-      if (!code.includes('highlighted error') && !code.includes('highlighted warning')) {
+      if (!checkClass(code, classMap.error) && !checkClass(code, classMap.warning)) {
         return code
       }
 

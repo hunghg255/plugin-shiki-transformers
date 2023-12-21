@@ -28,6 +28,11 @@
 
 `plugin-shiki-transformers` exports a custom `getHighlighter` that provides the same API as the one exported from `shiki`, except it adds a new `transformers` option.
 
+```css
+import 'plugin-shiki-transformers/shiki.css'
+
+```
+
 ```ts
 import { getHighlighter, createTransformerFocus } from 'plugin-shiki-transformers'
 
