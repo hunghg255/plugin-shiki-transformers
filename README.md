@@ -1,22 +1,19 @@
-<h2 align="center">plugin-shiki-transformers</h2>
-
 <p align="center">
-  <a href="https://github.com/innocenzi/plugin-shiki-transformers/actions?query=workflow%3Aci">
-    <img alt="Status" src="https://github.com/innocenzi/plugin-shiki-transformers/actions/workflows/ci.yml/badge.svg">
-  </a>
-  <span>&nbsp;</span>
-  <a href="https://www.npmjs.com/package/plugin-shiki-transformers">
-    <img alt="npm" src="https://img.shields.io/npm/v/plugin-shiki-transformers">
-  </a>
-  <br />
-  <br />
-  <p align="center">
-    Add transformer capabilities to Shiki's highlighter
-  </p>
-  <pre><div align="center">npm i shiki plugin-shiki-transformers</div></pre>
+<a href="https://www.npmjs.com/package/plugin-shiki-transformers" target="_blank" rel="noopener noreferrer">
+<img src="https://api.iconify.design/tabler:transform.svg?color=%23cda7fb" alt="logo" width='100'/></a>
 </p>
 
-&nbsp;
+<p align="center">
+  A library to transform code blocks in markdown files using <a href="https://github.com/shikijs/shiki">Shikijs</a>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/plugin-shiki-transformers" target="_blank" rel="noopener noreferrer"><img src="https://badge.fury.io/js/csvs-parsers.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/package/plugin-shiki-transformers" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/npm/dt/csvs-parsers.svg?logo=npm" alt="NPM Downloads" /></a>
+  <a href="https://bundlephobia.com/result?p=plugin-shiki-transformers" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/bundlephobia/minzip/plugin-shiki-transformers" alt="Minizip" /></a>
+  <a href="https://github.com/hunghg255/plugin-shiki-transformers/graphs/contributors" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg" alt="Contributors" /></a>
+  <a href="https://github.com/hunghg255/plugin-shiki-transformers/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/hunghg255/plugin-shiki-transformers" alt="License" /></a>
+</p>
 
 ## Fork
 - [shikiji](https://github.com/antfu/shikiji)
